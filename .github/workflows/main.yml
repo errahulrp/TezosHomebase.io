@@ -9,11 +9,11 @@ on:
       - main
   workflow_dispatch:
 
-permissions: 
+permissions:
   contents: write
 
 jobs:
-  
+
   test:
     name: Run Playwright tests
     runs-on: ubuntu-latest
@@ -29,29 +29,29 @@ jobs:
 
       - name: Install dependencies 📚
         run: npm ci
-      
+
       - name: Install Playwright Browsers 📚
         run: npx playwright install --with-deps
 
-      - name: TC01 - Run Playwright tests 
+      - name: TC01 - Run Playwright tests
         run: npm run test:tc01
-        env: 
-          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+        env:
+          WEBAPP_URL: ${{ secrets.MONGODB_URI }}
           BROWSER: chromium
 
       - name: TC01 - Deploy Report for TC 01🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: playwright-report 
+          folder: playwright-report
           target-folder: tests/tc-01/
 
-      - name: TC02 - Run Playwright tests 
+      - name: TC02 - Run Playwright tests
         run: npm run test:tc02
-        env: 
-          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+        env:
+          WEBAPP_URL: ${{ secrets.MONGODB_URI }}
           BROWSER: chromium
-  
+
       - name: TC02 - Deploy Report for TC 02🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
@@ -59,67 +59,67 @@ jobs:
           folder: playwright-report
           target-folder: tests/tc-02/
 
-      - name: TC03 - Run Playwright tests 
+      - name: TC03 - Run Playwright tests
         run: npm run test:tc03
-        env: 
-          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+        env:
+          WEBAPP_URL: ${{ secrets.MONGODB_URI }}
           BROWSER: chromium
-  
+
       - name: TC03 - Deploy Report for TC 03🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: playwright-report 
+          folder: playwright-report
           target-folder: tests/tc-03/
 
-      - name: TC04 - Run Playwright tests 
+      - name: TC04 - Run Playwright tests
         run: npm run test:tc04
-        env: 
-          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+        env:
+          WEBAPP_URL: ${{ secrets.MONGODB_URI }}
           BROWSER: chromium
-  
+
       - name: TC04 - Deploy Report for TC 04🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-            branch: gh-pages
-            folder: playwright-report
-            target-folder: tests/tc-04/
+          branch: gh-pages
+          folder: playwright-report
+          target-folder: tests/tc-04/
 
-      - name: TC05 - Run Playwright tests 
+      - name: TC05 - Run Playwright tests
         run: npm run test:tc05
-        env: 
-          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+        env:
+          WEBAPP_URL: ${{ secrets.MONGODB_URI }}
           BROWSER: chromium
-      
+
       - name: TC05 - Deploy Report for TC 05🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-            branch: gh-pages
-            folder: playwright-report 
-            target-folder: tests/tc-05/
+          branch: gh-pages
+          folder: playwright-report
+          target-folder: tests/tc-05/
 
-      - name: TC06 - Run Playwright tests 
+      - name: TC06 - Run Playwright tests
         run: npm run test:tc06
-        env: 
-          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+        env:
+          WEBAPP_URL: ${{ secrets.MONGODB_URI }}
           BROWSER: chromium
-          
-      - name: TC06 - Deploy Report for TC 06-01🚀
+
+      - name: TC06 - Deploy Report for TC 06🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-            branch: gh-pages
-            folder: playwright-report 
-            target-folder: tests/tc-06/
-      
+          branch: gh-pages
+          folder: playwright-report
+          target-folder: tests/tc-06/
+
       - name: TC07 - Run Playwright tests
         run: npm run test:tc07
-        env: 
-          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+        env:
+          WEBAPP_URL: ${{ secrets.MONGODB_URI }}
           BROWSER: chromium
-              
-      - name: TC07 - Deploy Report for TC 06-02🚀
+
+      - name: TC07 - Deploy Report for TC 07🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-            branch: gh-pages
-            folder: playwright-report 
-            target-folder: tests/tc-07/
+          branch: gh-pages
+          folder: playwright-report
+          target-folder: tests/tc-07/

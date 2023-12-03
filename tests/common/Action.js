@@ -1,9 +1,8 @@
 import { pageLocators } from "./Locator";
-import { AppConfig } from "../../config";
 
 async function changeNetwork(page) {
 
-    await page.goto(AppConfig.TestURL);
+    await page.goto("https://deploy-preview-629--tezos-homebase.netlify.app");
 
     await page.click(pageLocators.TokenCreator.EnterApp)
 
