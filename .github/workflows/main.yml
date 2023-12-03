@@ -44,7 +44,7 @@ jobs:
         with:
           branch: gh-pages
           folder: playwright-report 
-          target-folder: tests/pr-05/tc-01/
+          target-folder: tests/tc-01/
 
       - name: TC02 - Run Playwright tests 
         run: npm run test:tc02
@@ -57,7 +57,7 @@ jobs:
         with:
           branch: gh-pages
           folder: playwright-report
-          target-folder: tests/pr-05/tc-02/
+          target-folder: tests/tc-02/
 
       - name: TC03 - Run Playwright tests 
         run: npm run test:tc03
@@ -70,7 +70,7 @@ jobs:
         with:
           branch: gh-pages
           folder: playwright-report 
-          target-folder: tests/pr-05/tc-03/
+          target-folder: tests/tc-03/
 
       - name: TC04 - Run Playwright tests 
         run: npm run test:tc04
@@ -83,7 +83,7 @@ jobs:
         with:
             branch: gh-pages
             folder: playwright-report
-            target-folder: tests/pr-05/tc-04/
+            target-folder: tests/tc-04/
 
       - name: TC05 - Run Playwright tests 
         run: npm run test:tc05
@@ -96,30 +96,30 @@ jobs:
         with:
             branch: gh-pages
             folder: playwright-report 
-            target-folder: tests/pr-05/tc-05/
+            target-folder: tests/tc-05/
 
-      - name: TC06-01 - Run Playwright tests 
-        run: npm run test:tc06-01
+      - name: TC06 - Run Playwright tests 
+        run: npm run test:tc06
         env: 
           WEBAPP_URL: ${{ vars.WEBAPP_URL }}
           BROWSER: chromium
           
-      - name: TC06-01 - Deploy Report for TC 06-01🚀
+      - name: TC06 - Deploy Report for TC 06-01🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
             branch: gh-pages
             folder: playwright-report 
-            target-folder: tests/pr-05/tc-06-01/
+            target-folder: tests/tc-06/
       
-      - name: TC06-02 - Run Playwright tests
-        run: npm run test:tc06-02
+      - name: TC07 - Run Playwright tests
+        run: npm run test:tc07
         env: 
           WEBAPP_URL: ${{ vars.WEBAPP_URL }}
           BROWSER: chromium
               
-      - name: TC06-02 - Deploy Report for TC 06-02🚀
+      - name: TC07 - Deploy Report for TC 06-02🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
             branch: gh-pages
             folder: playwright-report 
-            target-folder: tests/pr-05/tc-06-02/
+            target-folder: tests/tc-07/
