@@ -1,0 +1,125 @@
+name: Run Playwright Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions: 
+  contents: write
+
+jobs:
+  
+  test:
+    name: Run Playwright tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install Node.js 📚
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies 📚
+        run: npm ci
+      
+      - name: Install Playwright Browsers 📚
+        run: npx playwright install --with-deps
+
+      - name: TC01 - Run Playwright tests 
+        run: npm run test:tc01
+        env: 
+          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+          BROWSER: chromium
+
+      - name: TC01 - Deploy Report for TC 01🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: playwright-report 
+          target-folder: tests/pr-05/tc-01/
+
+      - name: TC02 - Run Playwright tests 
+        run: npm run test:tc02
+        env: 
+          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+          BROWSER: chromium
+  
+      - name: TC02 - Deploy Report for TC 02🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: playwright-report
+          target-folder: tests/pr-05/tc-02/
+
+      - name: TC03 - Run Playwright tests 
+        run: npm run test:tc03
+        env: 
+          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+          BROWSER: chromium
+  
+      - name: TC03 - Deploy Report for TC 03🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: playwright-report 
+          target-folder: tests/pr-05/tc-03/
+
+      - name: TC04 - Run Playwright tests 
+        run: npm run test:tc04
+        env: 
+          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+          BROWSER: chromium
+  
+      - name: TC04 - Deploy Report for TC 04🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+            branch: gh-pages
+            folder: playwright-report
+            target-folder: tests/pr-05/tc-04/
+
+      - name: TC05 - Run Playwright tests 
+        run: npm run test:tc05
+        env: 
+          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+          BROWSER: chromium
+      
+      - name: TC05 - Deploy Report for TC 05🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+            branch: gh-pages
+            folder: playwright-report 
+            target-folder: tests/pr-05/tc-05/
+
+      - name: TC06-01 - Run Playwright tests 
+        run: npm run test:tc06-01
+        env: 
+          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+          BROWSER: chromium
+          
+      - name: TC06-01 - Deploy Report for TC 06-01🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+            branch: gh-pages
+            folder: playwright-report 
+            target-folder: tests/pr-05/tc-06-01/
+      
+      - name: TC06-02 - Run Playwright tests
+        run: npm run test:tc06-02
+        env: 
+          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+          BROWSER: chromium
+              
+      - name: TC06-02 - Deploy Report for TC 06-02🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+            branch: gh-pages
+            folder: playwright-report 
+            target-folder: tests/pr-05/tc-06-02/

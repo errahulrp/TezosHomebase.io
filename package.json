@@ -1,0 +1,34 @@
+{
+  "name": "homebase",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:tc01": "playwright test tests/TC01",
+    "test:tc02": "playwright test tests/TC02",
+    "test:tc03": "playwright test tests/TC03",
+    "test:tc04": "playwright test tests/TC04",
+    "test:tc05": "playwright test tests/TC05",
+    "test:tc06": "playwright test tests/TC06",
+    "test:tc07": "playwright test tests/TC07",
+    "dev": "node --inspect-brk ./node_modules/@playwright/test/cli.js test TC04DAOValues.spec.js --project=chromium --headed"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.40.1",
+    "@types/node": "^20.8.6"
+  },
+  "dependencies": {
+    "cookies": "^0.8.0",
+    "dotenv": "^16.3.1",
+    "mongodb": "^6.3.0",
+    "mongoose": "^7.6.6",
+    "playwright": "^1.40.1"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [],
+  "description": ""
+}
