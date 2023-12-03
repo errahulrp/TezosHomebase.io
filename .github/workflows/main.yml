@@ -33,6 +33,15 @@ jobs:
       - name: Install Playwright Browsers 📚
         run: npx playwright install --with-deps
 
+      - name: Install MongoDB 📚
+        run: |
+          sudo apt-get install -y mongodb
+          sudo systemctl start mongodb
+          sudo systemctl enable mongodb
+
+      - name: Install Mongoose 📚
+        run: npm install mongoose
+
       - name: TC01 - Run Playwright tests
         run: npm run test:tc01
         env:
