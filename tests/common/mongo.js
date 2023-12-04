@@ -5,8 +5,8 @@ dotenv.config();
 
 const uri = process.env.MONGODB_URI;
 
-if (!uri || !uri.startsWith('mongodb://')) {
-  throw new Error('Invalid MongoDB URI');
+if (!uri) {
+  throw new Error("MONGODB_URI is not defined in the environment variables.");
 }
 
 const client = new MongoClient(uri);
