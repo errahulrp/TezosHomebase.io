@@ -21,7 +21,7 @@ const TezosTestData = {
         TC04DAODescription: "",
         VotingDays: '00',
         VotingHours: '00',
-        VotingMinutes: "08",
+        VotingMinutes: "10",
         ExecutionDays: "00",
         ExecutionHours: "00",
         ExecutionMinutes: "01",

@@ -4,11 +4,6 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const uri = "mongodb+srv://errahulrp:uVTfsWNErAxhVcAP@homebase.zdemxjc.mongodb.net/?retryWrites=true&w=majority";
-
-if (!uri) {
-  throw new Error("MONGODB_URI is not working.");
-}
-
 const client = new MongoClient(uri);
 
 const databaseName = 'Homebase';
