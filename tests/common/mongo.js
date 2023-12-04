@@ -4,6 +4,11 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const uri = process.env.MONGODB_URI;
+
+if (!uri || !uri.startsWith('mongodb://')) {
+  throw new Error('Invalid MongoDB URI');
+}
+
 const client = new MongoClient(uri);
 
 const databaseName = 'Homebase';
