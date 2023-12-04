@@ -2,53 +2,39 @@
 
 ## Running Playwright Tests - Manual
 
-1. Visit Github action page for the Repo here
-https://github.com/errahulrp/TezosHomebase.io/actions
+To execute the automated tests for TezosHomeBase.io, follow these steps:
 
-Here, all the test scripts and cases are available to test the website without repeatedly performing the same actions.
-2. All of the workflows that were executed on this repository are displayed on the actions page. Click on "**Run Playwright Tests**" to see all the workflows carried out for the tests.
-3. To start a workflow, select the "main" branch by clicking the "**Run Workflow"** button located above all other workflows and click “Run Workflow” All test scripts will be run sequentially by doing this.
+1. Visit the [GitHub Actions page for the Repository](https://github.com/errahulrp/TezosHomebase.io/actions).
+   - All test scripts and cases are available here for testing the website without the need to repeatedly perform the same actions.
+2. On the actions page, you'll find all executed workflows. Click on "**Run Playwright Tests**" to view the workflows carried out for the tests.
+3. To start a workflow, select the "main" branch and click the "**Run Workflow**" button located above the workflows list. This action will run all test scripts sequentially.
 
-## **Reports for Tests Scripts**
+## Reports for Test Scripts
 
-**Report for TC01-Token and DAO creation:** 
-This test case involves Token Creation and DAO Creation by using valid values and invalid values.
+Here are the reports for various test cases:
 
-https://errahulrp.github.io/TezosHomebase.io/tests/tc-01/
+- **Token and DAO Creation (TC01):** 
+  - [Token and DAO Creation Report](https://errahulrp.github.io/TezosHomebase.io/tests/tc-01/) - Involves Token and DAO creation using valid and invalid values.
 
-**Report for TC02: Off chain proposal creation:** 
-This test case involves Creation off chain proposals votes and count the votes.
+- **Off-chain Proposal Creation (TC02):** 
+  - [Off-chain Proposal Creation Report](https://errahulrp.github.io/TezosHomebase.io/tests/tc-02/) - Involves creating off-chain proposals, voting, and vote count.
 
-https://errahulrp.github.io/TezosHomebase.io/tests/tc-02/
+- **Token Deposit (TC03):** 
+  - [Token Deposit Report](https://errahulrp.github.io/TezosHomebase.io/tests/tc-03/) - Involves token deposits and delegation acceptance.
 
-**Report for TC03: Token Deposite:** 
-This test case involves Token deposite and accpect the delegations.
+- **On-chain Proposal Creation (TC04):** 
+  - [On-chain Proposal Creation Report](https://errahulrp.github.io/TezosHomebase.io/tests/tc-04/) - Involves the creation of on-chain proposals with valid transactions.
 
-https://errahulrp.github.io/TezosHomebase.io/tests/tc-03/
+- **Voting on On-chain Proposals (TC05):** 
+  - [Voting on On-chain Proposals Report](https://errahulrp.github.io/TezosHomebase.io/tests/tc-05/) - Involves voting on on-chain proposals and dropping proposals.
 
-**Report for TC04: on-chain proposal creation:** 
-This test case involves Creation of on-chain proposal Creation includes valid tractionsactions.
+- **Token Withdrawal & Staking (TC06):** 
+  - [Token Withdrawal & Staking Report](https://errahulrp.github.io/TezosHomebase.io/tests/tc-06/) - Involves verification of token withdrawal and staking.
 
-https://errahulrp.github.io/TezosHomebase.io/tests/tc-04/
-
-**Report for TC05: Voting on On-chain proposals:** 
-This test case involves voting on On-Chain proposals and drop the proposals.
-
-https://errahulrp.github.io/TezosHomebase.io/tests/tc-05/
-
-**Report for TC06: Token Withdrawal & Staking:** 
-This test case involves verification of Token Withdrawal and Token staking.
-
-https://errahulrp.github.io/TezosHomebase.io/tests/tc-06/
-
-**Report for TC07: Token unstaking and proposal execution:** 
-This test case involves verification of Token unstaking and proposal execution.
-
-https://errahulrp.github.io/TezosHomebase.io/tests/tc-07/
-
----
+- **Token Unstaking and Proposal Execution (TC07):** 
+  - [Token Unstaking and Proposal Execution Report](https://errahulrp.github.io/TezosHomebase.io/tests/tc-07/) - Involves verification of token unstaking and proposal execution.
 
 ## Configuration Changes
 
-The current value for the same is
+The current value for the website configuration is:
 [https://deploy-preview-629--tezos-homebase.netlify.app](https://deploy-preview-629--tezos-homebase.netlify.app/)
